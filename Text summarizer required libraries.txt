@@ -1,0 +1,20 @@
+# Install pytorch for cpu "torch"
+# or get the latest gpu version from:
+
+transformers>=4.36.2
+diffusers>=0.25.0
+ctransformers[cuda]>=0.2.24
+pillow>=9.3.0
+gradio
+streamlit>=1.29.0
+accelerate>=0.25.0
+pydf
+peft >= 0.6.0
+
+from transformers import pipeline
+
+pipe = pipeline("summarization", model="facebook/bart-large-cnn")     Copy # Load model directly
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+
+tokenizer = AutoTokenizer.from_pretrained("facebook/bart-large-cnn")
+model = AutoModelForSeq2SeqLM.from_pretrained("facebook/bart-large-cnn")
